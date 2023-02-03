@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--
+   Author: Michele Helm
+   Date:   
+   
+   Filename: index.html
+   -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michele's Actor Portfolio</title>
+   <link href="portfolio_reset.css" rel="stylesheet" />
+   <link href="portfolio_layout.css" rel="stylesheet" />
+   <link href="portfolio_effects.css" rel="stylesheet" />
+</head>
+    <style>
+        header, body {
+            background-image: url(images/rainbow.jpg);
+        }
+
+        .animated_rainbow_1 {
+            font-size: 42px;
+            font-family: Arial Black, Gadget, sans-serif;
+            background-image: -webkit-linear-gradient(left, #f00, #ff2b00, #f50, #ff8000, #fa0, #ffd500, #ff0, #d4ff00, #af0, #80ff00, #5f0, #2bff00, #0f0, #00ff2a, #0f5, #00ff80, #0fa, #00ffd5, #0ff, #00d5ff, #0af, #0080ff, #05f, #002aff, #00f, #2b00ff, #50f, #8000ff, #a0f, #d400ff, #f0f, #ff00d4, #f0a, #ff0080, #f05, #ff002b, #f00);
+            -webkit-animation: animatedBackground_a 5s linear infinite alternate;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: #0000;
+            background-clip: text;
+            text-align: center;
+        }
+
+        @keyframes animatedBackground_a {
+            0% { background-position: 0 0 }
+            100% { background-position: -500px 0 }
+        }
+    
+        #slider a {
+            position: absolute;
+        }
+            
+        #slider a:nth-of-type(1) {
+            animation-name: fader;
+            animation-delay: 4s;
+            animation-duration: 1s;
+            z-index: 20;
+        }
+        
+        #slider a:nth-of-type(n+3) {
+            display: none;
+        }
+        
+        @keyframes fader {
+            from{opacity:1.0;}
+            to{opacity:0.0};
+        }
+        
+    </style>
+<body>
+   <header>
+      <div class="animated_rainbow_1">Welcome to<br> Michele Helm's<br> Acting Portfolio!</div>
+      <nav class="horizontal">
+         <ul>
+            <li><a href="#">TRAINING</a></li>
+            <li><a href="#">EXPERIENCE</a></li>
+            <li><a href="#">WRITING</a></li>
+            <li><a href="hobbies.html">HOBBIES</a></li>
+            <li><a href="#">REEL</a></li>
+            <li><a href="mailto:mmh.actorwriter@gmail.com">CONTACT</a></li>
+            <li><a href="https://www.clubhouse.com/@bwiko24?utm_medium=ch_profile&utm_campaign=F8POrSGqJAGilklDYoemhw-542317"><img src="images/Clubhouse_App_Logo.png" alt="clubhouse"/></a></li>
+            <li><a href="https://pro.imdb.com/name/nm12906264?s=96c30ab0-8f66-e017-3c03-26cfa61e2e86&site_preference=normal"><img src="images/IMDbPro-1.png" alt="imdbpro"/></a></li>
+         </ul>
+      </nav>
+   </header>
+   
+   <section id="left">
+      <aside>
+         <h1>Training</h1>
+         <p>Learn about where I study acting.</p>
+      </aside>
+      <aside>
+         <h1>Experience</h1>
+         <p>Learn about the work I'm involved in.</p>
+      </aside>
+      <aside>
+         <h1>Writing</h1>
+         <p>Read samples of my written work, including screenplays.</p>
+      </aside>
+   </section>
+   <section id="center">
+      <div id="cube">
+      
+         <div id="cube_bottom" class="cube_face">
+            <img src="images/black_bg%20-%20Copy%20(6).jpg" alt="" />
+         </div>
+         
+         <div id="cube_top" class="cube_face">
+             <!-- <p>Headshot <span>-</span> Gallery</p> -->
+             <img src="images/black_bg%20-%20Copy.jpg" alt="" />
+         </div>
+         
+         <div id="cube_left" class="cube_face">
+            <img src="images/black_bg%20-%20Copy%20(3).jpg" alt="" />
+         </div>
+         
+         <div id="cube_right" class="cube_face">
+            <img src="images/black_bg%20-%20Copy%20(4).jpg" alt="" />
+         </div>
+         
+         <div id="cube_front" class="cube_face">
+             <div id="slider">
+                 <a href=""><img src="images/My_project(1).jpg" alt=""/></a>
+                 <a href=""><img src="images/My_project(2).jpg" alt=""/></a>
+                 <a href=""><img src="images/My_project(3).jpg" alt=""/></a>
+             </div>
+            
+             <script>
+                 document.addEventListener("DOMContentLoaded", function() {
+                 var fadeComplete = function(e) {stage.appendChild(arr[0]);};
+                 var stage = document.getElementById("slider");
+                 var arr = stage.getElementsByTagName("a");
+                 for(var i=0; i<arr.length;i++) {
+                 arr[i].addEventListener("animationend", fadeComplete, false);
+                  }    
+                }, false);
+             </script>
+         </div>
+         
+      </div>
+   </section>
+   
+   <section id="right">
+      <aside>
+         <h1>Hobbies</h1>
+         <p>Learn about what makes me ME &#128521.</p>
+      </aside>
+      <aside>
+         <h1>Reel</h1>
+         <p>Watch me in action by viewing clips from my acting reel.</p>
+      </aside>
+      <aside>
+         <h1>Contact</h1>
+         <p>E-mail me for matters regarding representation or to discuss current, and/or future work.</p>
+      </aside>
+   </section>
+   
+   <footer>
+      Michele Helm &#10087; Actor/Writer &#10087; Los Angeles, CA &#10087
+   </footer>
+   
+</body>
+</html>
